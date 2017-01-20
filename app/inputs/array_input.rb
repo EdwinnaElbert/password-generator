@@ -9,7 +9,7 @@ class ArrayInput < SimpleForm::Inputs::StringInput
   end
 
   def form(value)
-    @builder.text_field(nil, input_html_options.merge( class: 'form-control', value: value, name: "#{object_name}[#{attribute_name}][]"))
+    @builder.text_field(nil, input_html_options.merge( class: 'form-control single-word', value: value, name: "#{object_name}[#{attribute_name}][]"))
   end
 
   def input_type

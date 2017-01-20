@@ -1,5 +1,5 @@
 %h1 Enter at least three words. Please, do not use whitespace characters.
 = simple_form_for @password do |f|
-  = f.input :user_inputs, as: :array, wrapper_html: { class: 'single-word' }
+  = f.input :user_inputs, as: :array, label: false, wrapper_html: { class: 'words' }
   = f.submit
 %button#add-input Add word
