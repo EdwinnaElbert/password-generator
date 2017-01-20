@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :passwords, only: [:show, :new, :create]
   get 'passwords/new'
 
   get 'passwords/create'
