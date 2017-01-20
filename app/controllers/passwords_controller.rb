@@ -13,12 +13,14 @@ class PasswordsController < ApplicationController
     end
   end
 
+  def show
+  end
   private
 
   def password_params
     params.require(:password)
           .permit(user_inputs: [])
-          .merge(combinations: GenerateCombinations.new(params.dig(:password, :user_inputs).call))
+          .merge(combinations: GenerateCombinations.new(params.dig(:password, :user_inputs)).call)
   end
 
 end
