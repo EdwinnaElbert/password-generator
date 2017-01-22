@@ -2,3 +2,5 @@
 = @password.user_inputs
 %p Generated passwords:
 = @password.combinations
+= link_to "Back", root_path
+= link_to "delete", password_path(@password), method: :delete

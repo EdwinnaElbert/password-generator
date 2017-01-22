@@ -1,4 +1,12 @@
 class PasswordsController < ApplicationController
+  def index
+    @passwords = Password.all(password_params)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render xml: @passwords}
+      format.json { render json: @passwords}
+    end
+  end
   def new
     @password = Password.new
   end
@@ -16,6 +24,13 @@ class PasswordsController < ApplicationController
   def show
     @password = Password.find(params[:id])
   end
+
+  def destroy
+     @password = Password.find(params[:id])
+     @password.destroy
+     redirect_to passwords_path
+  end
+
   private
 
   def password_params
