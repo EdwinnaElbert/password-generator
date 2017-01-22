@@ -1,14 +1,8 @@
 class PasswordsController < ApplicationController
-  def index
-    @passwords = Password.all(password_params)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render xml: @passwords}
-      format.json { render json: @passwords}
-    end
-  end
+
   def new
     @password = Password.new
+    @passwords = Password.all
   end
 
   def create

@@ -3,4 +3,6 @@
 %p Generated passwords:
 = @password.combinations
 = link_to "Back", root_path
-= link_to "delete", password_path(@password), method: :delete
+= link_to "Delete", password_path(@password),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }

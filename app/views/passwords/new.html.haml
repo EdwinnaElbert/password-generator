@@ -3,3 +3,5 @@
   = f.input :user_inputs, as: :array, label: false, wrapper_html: { class: 'words' }
   = f.submit
 %button#add-input Add word
+= @passwords.each do |password|
+  = @password.user_inputs
