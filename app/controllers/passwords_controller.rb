@@ -2,7 +2,6 @@ class PasswordsController < ApplicationController
 
   def new
     @password = Password.new
-    @passwords = Password.all
   end
 
   def create
